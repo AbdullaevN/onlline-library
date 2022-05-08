@@ -17,18 +17,6 @@ import {
   getCart,
 } from "redux/cart-actions";
 
-// const useStyles = makeStyles((theme) => {
-//   root: {
-//     display: "flex";
-//     flexDirection: "column";
-//     alignItems: "center";
-//     '&>*':
-//       {
-//         margin: theme.spacing(1),
-//       };
-//   }
-// });
-
 const MainPage = () => {
   //   const buttonStyles = useStyles();
 
@@ -79,45 +67,13 @@ const MainPage = () => {
     return checkProductInCart(id);
   };
 
-  // let output = "";
-  // let separator = "<br>";
-  // const sortButton = () => {
-  //   users
-  //     .sort(function (a, b) {
-  //       let nameA = a.name.toUpperCase();
-  //       let nameB = b.name.toUpperCase();
-  //       return nameA < nameB ? -1 : nameA > nameB ? 1 : 0;
-  //     })
-  //     .forEach((element) => {
-  //       output += element.name + separator;
-  //     });
-  // };
-  // console.log(users, "soort");
-  // const [data, setMockData] = useState(users);
-  // const [order, setOrder] = useState("ASC");
-  // const sorting = (col) => {
-  //   if (order === "ASC") {
-  //     const sorted = [...users].sort((a, b) =>
-  //       a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
-  //     );
-  //     setMockData(sorted);
-  //     setOrder("DSC");
-  //   }
-  //   if (order === "DSC") {
-  //     const sorted = [...users].sort((a, b) =>
-  //       a[col].toLowerCase() < b[col].toLowerCase() ? 1 : -1
-  //     );
-  //     setMockData(sorted);
-  //     setOrder("ASC");
-  //   }
-  // };
-  // console.log(sorted, "sorted");
   const handleSorted = () => {
     let sorted = users.sort((a, b) => a.name > b.name);
     return sorted;
     console.log(sorted, "usersss");
   };
   console.log(handleSorted(), "usersss");
+
   return (
     <div>
       <div
@@ -142,13 +98,7 @@ const MainPage = () => {
         >
           Cart page
         </Button>
-        <Button
-          color="primary"
-          variant="contained"
-          onClick={() => handleSorted}
-        >
-          sort
-        </Button>
+
         <p>Кол-во книг в корзине : {productsCountInCart}</p>
       </div>
 
